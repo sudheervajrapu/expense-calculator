@@ -33,7 +33,7 @@ function _calculateExpenseTotal() {
     // Clear form data after expense added to the list
     _clearForm();
 
-    totalExpense = totalExpense + amount;
+    totalExpense += amount;
     _setTotalExpense(totalExpense);
   }
 }
@@ -59,7 +59,7 @@ function _getDateString(moment) {
 function _deleteExpense(expenseItem) {
   allExpenses.forEach((expense, index) => {
     if (expense.moment.valueOf() === expenseItem) {
-      totalExpense = totalExpense - expense.amount;
+      totalExpense -= expense.amount;
       allExpenses.splice(index, 1);
     } else {
       return allExpenses;
